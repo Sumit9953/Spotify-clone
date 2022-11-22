@@ -4,9 +4,7 @@ import { useDispatch } from "react-redux";
 import PlayPause from "./PlayPause";
 import { playPause, setActiveSong } from "../redux/features/playerSlice";
 
-const SongCard = ({ song, i }) => {
-
-  const activeSong = 'Test'
+const SongCard = ({ song, isPlaying, activeSong, data, i }) => {
 
   const handlePauseClick = () => {
     
@@ -22,6 +20,8 @@ const SongCard = ({ song, i }) => {
       <div className={`absolute inset-0 justify-center items-center bg-black bg-opacity-50 group-hover:flex
       ${activeSong?.title === song.title ? 'flex bg-black bg-opacity-70' : 'hidden'}`} >
         <PlayPause
+          isPlaying = {isPlaying}
+          activeSong = {activeSong}
           song={song}
           handlePause={handlePauseClick}
           handlePlay={handlePlayClick}
