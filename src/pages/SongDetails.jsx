@@ -26,7 +26,7 @@ const SongDetails = () => {
     }
     if(error) return <Error />
 
-    console.log(songid);
+    console.log("Songs ID :" ,songid);
 
 return (
 
